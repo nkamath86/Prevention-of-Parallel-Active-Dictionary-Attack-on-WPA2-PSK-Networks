@@ -1,0 +1,9 @@
+sudo apt-get install liblnl-dev
+cd ./Downloads/lorcon
+./configure --prefix=/usr
+sudo make depend
+sudo make
+sudo make install
+cd ./Downloads/PyLorcon2-0.2
+sudo python setup.py build
+sudo python setup.py install

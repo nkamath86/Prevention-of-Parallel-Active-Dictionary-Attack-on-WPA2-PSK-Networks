@@ -1,0 +1,49 @@
+- the ap and client must not be connected to the same network
+
+- the wireless interface should be in monitor/adhoc mode (R&D required) for AP.
+radiotap header for client (perhaps)
+
+- scapy-fakeap may be used as REFERENCE 
+(https://github.com/rpp0/scapy-fakeap)
+
+- setting up monitor mode :
+{
+	# iw dev wlan0 interface add mon0 type monitor
+	# ifconfig mon0 up
+}
+OR
+{
+	# iw phy phy0 interface add mon0 type monitor
+	# ifconfig mon0 promisc up
+}
+(promisc = sniff packets not destined for it)
+
+- check these links: 
+(http://stackoverflow.com/questions/31529495/how-can-i-send-raw-packets-over-wifi-without-a-network)
+
+(https://security.stackexchange.com/questions/105518/how-to-forge-custom-ieee-802-11-packets)
+
+(http://www.tcpdump.org/) for libpcap
+
+(http://stackoverflow.com/questions/9192333/accessing-wireless-interface-802-11-at-mac-layer-linux)
+
+(https://books.google.co.in/books?id=PDR4nOAP8qUC&pg=PA10&lpg=PA10&dq=sending+custom+eapol+frames+scapy&source=bl&ots=kMJEHaLryq&sig=lNAwIv5E3AiqUWfiTAYMS0PovyY&hl=en&sa=X&ved=0ahUKEwj476HS6OfSAhULvI8KHSJbBTYQ6AEILDAD#v=onepage&q=sending%20custom%20eapol%20frames%20scapy&f=false)
+
+(Searched this: exchanging custom 802.11 packets over wireless)
+
+- scapy sniff function: 
+sniff(iface="wlan0", prn=lambda x: x.show())
+sniff(iface="wlan0", prn=lambda x: x.summary())
+
+- monitor mode/ adhoc mode / master mode :
+
+(https://help.ubuntu.com/community/WifiDocs/MasterMode) 
+
+(https://en.wikipedia.org/wiki/Monitor_mode)
+
+https://en.wikipedia.org/wiki/Wireless_ad_hoc_network
+
+
+
+sendp(Dot11(addr1="fa:fa:fa:fa:fa:fa"), iface="mon0",loop=1)
+

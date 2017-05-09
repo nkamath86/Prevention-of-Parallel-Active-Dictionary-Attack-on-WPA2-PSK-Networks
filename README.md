@@ -9,5 +9,5 @@ eapol_try.py 	- sample eapol packet sniffing code
 install.txt		- steps to install Lorcon, PyLorcon2 and Scapy
 
 # Socket parts
-cltrykeys 		- client side code with only one client 
-try_with_keys 	- server side (AP Side) code with 
+cltrykeys 		- client side code with only one client using raw sockets
+try_with_keys 	- server side (AP Side) code with existing system using sraw sockets
