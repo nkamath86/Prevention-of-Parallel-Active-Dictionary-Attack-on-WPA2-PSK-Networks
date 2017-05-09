@@ -1,5 +1,5 @@
 # README 
-# explanation of files in the project folder
+# Explanation of files in the project folder
 AP_Existing.py	- code for access point of existing system implementing the WPA2-PSK standard
 
 Client.py		- code for client side of existing as well as proposed system 
